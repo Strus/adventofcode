@@ -12,11 +12,8 @@ def get_mass_list():
 
 def part_one():
     mass_list = get_mass_list()
-    fuel_needed = 0
-    for mass in mass_list:
-        fuel_needed += math.floor(mass/3) - 2
-
-    print(fuel_needed)
+    mass_list = [math.floor(x/3) - 2 for x in mass_list]
+    print(sum(mass_list))
 
 
 def calculate_fuel_needed(mass):
@@ -27,13 +24,11 @@ def calculate_fuel_needed(mass):
     fuel_needed += calculate_fuel_needed(fuel_needed)
     return fuel_needed
 
+
 def part_two():
     mass_list = get_mass_list()
-    fuel_needed = 0
-    for mass in mass_list:
-        fuel_needed += calculate_fuel_needed(mass)
-
-    print(fuel_needed)
+    mass_list = [calculate_fuel_needed(x) for x in mass_list]
+    print(sum(mass_list))
 
 
 part_one()
