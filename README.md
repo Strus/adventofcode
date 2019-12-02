@@ -1,2 +1,1 @@
-# Advent of Code
-Advent of Code solutions.
+Advent of Code solutions written in Python.
